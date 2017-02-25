@@ -1,0 +1,70 @@
+{% extends "store/base.html" %}
+{% block content %}
+<div class="w3-row-padding">
+    <div class="w3-container w3-col m6 w3-center" style="max-height:300px;">
+        <img style="max-width:100%;max-height:300px" alt="{{product.name}} image" src="{{ product.image.url }}">
+    </div>
+    <div class="w3-col m6">
+            <h3>{{product.name}}</h3>
+            {% if product.tags %}
+            {% for tag in product.tags.all %}
+            <a class="w3-tag w3-theme">{{tag.name}}</a>
+            {% endfor %}
+            {% endif %}
+            <h2><strong>${{product.price}}</strong></h2>
+            <button class="w3-btn w3-round w3-theme w3-hover-theme">
+                <span class="glyphicon glyphicon-shopping-cart"></span>
+                Add to cart
+            </button>
+    </div>
+</div>
+<div class="w3-padding">
+    <div>{{product.description|safe}}</div>
+</div>
+
+<!--<div class="w3-row-padding">
+
+    <img class="w3-col m3"
+         src="{{ product.image.url }}"
+         alt="{{product.name}} image">
+
+    <div class="w3-col m9">
+
+        <div class="w3-container">
+
+            <div class="w3-left">
+                <h1>
+                    {{product.name}}
+                </h1>
+                {% if product.tags %}
+                    {% for tag in product.tags.all %}
+                        <a class="w3-tag w3-theme">{{tag.name}}</a>
+                    {% endfor %}
+                {% endif %}
+            </div>
+
+            <div class="w3-right">
+                <h3>
+                    Price: <strong>${{product.price}}</strong>
+                </h3>
+
+                <button class="w3-btn
+                            w3-round
+                            w3-theme
+                            w3-hover-theme">
+                    <span class="glyphicon glyphicon-shopping-cart"></span>
+                    Add to cart
+                </button>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="">
+            {{product.description|safe}}
+        </div>
+
+    </div>
+</div>-->
+
+{% endblock %}

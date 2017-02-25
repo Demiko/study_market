@@ -1,0 +1,39 @@
+{%load static%}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}Store{% endblock %}</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="Dmitry Serbin">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+    <link rel="stylesheet" href="{% static 'css/riverside-theme.css' %}">
+</head>
+<body>
+<header>
+    <h3>Board Game Heaven </h3>
+    <ul class="w3-navbar w3-theme">
+        <li>
+            <a href="{% url 'store:product_list_wo_page' %}">
+                <span class="glyphicon glyphicon-knight"></span>
+                Games
+            </a>
+        </li>
+        <li class="w3-right">
+            <a>
+                <span class="glyphicon glyphicon-shopping-cart"></span>
+                Cart
+            </a>
+        </li>
+    </ul>
+</header>
+<div class="w3-content w3-padding" style="max-width:1000px; margin:auto">
+    {% block content %}{% endblock %}
+</div>
+<footer>
+</footer>
+</body>
+</html>
